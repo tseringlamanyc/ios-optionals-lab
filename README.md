@@ -9,12 +9,20 @@ a. Given the variable `userNameOne` below, print *"The username is Test User"*. 
 
 ```swift
 var userNameOne: String? = "Test User"
+if let realName = userNameOne {
+  print("The username is \(realName)")
+}
 ```
 
 b. Given the variable `userNameTwo` below, print *"The username is undefined"*.  Use the *nil coalescing operator* (`??`).
 
 ```swift
 var userNameTwo: String? = nil
+if let nameTwo = userNameTwo {
+   print("The username is \(nameTwo)")
+   } else {
+   print("The username is undefined")
+}
 ```
 
 ## Question 2
@@ -24,6 +32,11 @@ a. Given the variables `rectOneWidth` and `rectOneHeight` below, print "The area
 ```swift
 var rectOneWidth: Double? = 5
 var rectOneHeight: Double? = 10
+
+if let width = rectOneWidth, let height = rectOneHeight {
+    print("The area of rectOne is \(width * height)")
+}
+
 ```
 
 b. Given the variables `rectTwoWidth` and `rectTwoHeight` below, print "The are of rectTwo is not able to be calculated".  Use *Optional Binding* (`if let`) to print this message.
@@ -31,6 +44,12 @@ b. Given the variables `rectTwoWidth` and `rectTwoHeight` below, print "The are 
 ```swift
 var rectTwoWidth: Double? = nil
 var rectTwoHeight: Double? = nil
+
+if let width = rectTwoWidth, let height = rectTwoHeight {
+   print("The area of rectTwo is \(width * height)")
+   } else {
+   print("The are of rectTwo is not able to be calculated")
+}
 ```
 
 ## Question 3
@@ -42,6 +61,12 @@ a. Given the variables `userOneName`, `userOneAge`, and `userOneHeight` below, w
 var userOneName: String? = "Anne"
 var userOneAge: Int? = 15
 var userOneHeight: Double? = 70
+
+if let name = userOneName, let age = userOneAge, let height = userOneHeight {
+let heightFeet = ((height/12) * 10).rounded()/10
+print("Hello \(name)! You are \(age) years old and \(heightFeet) feet tall.")
+} 
+
 ```
 
 b. Given the variables `userTwoName`, `userTwoAge` and `userTwoHeight` below, write code that prints "Hello user!  You are 15 years old and I don't know how tall you are".  Use optional binding
@@ -50,6 +75,13 @@ b. Given the variables `userTwoName`, `userTwoAge` and `userTwoHeight` below, wr
 var userTwoName: String? = nil
 var userTwoAge: Int? = 15
 var userTwoHeight: Double? = nil
+
+if let name = userTwoName, let age = userTwoAge, let height = userTwoHeight {
+let heightFeet = ((height/12) * 10).rounded()/10
+print("Hello \(name)! You are \(age) years old and \(heightFeet) feet tall.")
+} else {
+  print("Hello user! You are 15 years old and I dont know how tall you are")
+}
 ```
 
 
@@ -61,6 +93,12 @@ Give the variable `favoriteNumber`, write code that either prints "Your favorite
 
 ```swift
 var favoriteNumber = Bool.random() ? Int.random(in: 0...10) : nil
+
+if let num = favoriteNumber {
+  print("Your favorite number is \(num)")
+  } else {
+  print("I dont know what your favorite number is")
+}
 ```
 
 
@@ -73,6 +111,13 @@ Given the variables `numOne`, `numTwo` and `numThree`, write code that prints "T
 var numOne = Bool.random() ? Int.random(in: 0...10) : nil
 var numTwo = Bool.random() ? Int.random(in: 0...10) : nil
 var numThree = Bool.random() ? Int.random(in: 0...10) : nil
+
+if let num1 = numOne, let num2 = numTwo, let num3 = numThree {
+  let sum = (num1 + num2 + num3)
+  print("The sum of all the numbers is \(sum)")
+  } else {
+  print("The sum is zero")
+}
 ```
 
 ## Question 6
@@ -85,6 +130,12 @@ var numbers = [Int?]()
 for _ in 0..<10 {
     numbers.append(Bool.random() ? Int.random(in: 0...100) : nil)
 }
+
+if let num = numbers {
+   sum += num 
+   print("The sum of all the numbers is \(sum)")
+}
+
 ```
 
 b. Using the same variable, find the average of all non-nil values.
