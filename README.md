@@ -152,7 +152,7 @@ for num in numbers {
     avg = ((sum) / (nonNilValue))
     }
 }
-print("The sum of non nil value is \(avg)")
+print("The avg of non nil value is \(avg)")
 
 ```
 
