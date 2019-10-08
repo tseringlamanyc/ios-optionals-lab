@@ -131,14 +131,30 @@ for _ in 0..<10 {
     numbers.append(Bool.random() ? Int.random(in: 0...100) : nil)
 }
 
-if let num = numbers {
-   sum += num 
-   print("The sum of all the numbers is \(sum)")
+var sum = 0
+for num in numbers {
+    sum += num ?? 0
 }
+print("The sum of all the numbers is \(sum)")
 
 ```
 
 b. Using the same variable, find the average of all non-nil values.
+```
+sum = 0
+var nonNilValue = 0
+var avg = 0
+
+for num in numbers {
+    if let realNum = num {
+    nonNilValue += 1
+    sum += realNum
+    avg = ((sum) / (nonNilValue))
+    }
+}
+print("The sum of non nil value is \(avg)")
+
+```
 
 ## Extra Questions
 
